@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from django.db import models
 
 class Categorie(models.Model):
@@ -31,7 +33,7 @@ class Movie(models.Model):
 	title = models.CharField(max_length=255)
 	poster = models.ImageField(upload_to='static/movies/img')
 	description = models.TextField()
-	duration = models.CharField(max_length=255)
+	duration = models.DurationField(default=timedelta())
 	genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
 	categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
 	clasification = models.ForeignKey(Clasification, on_delete=models.CASCADE)
