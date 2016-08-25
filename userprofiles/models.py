@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
@@ -9,3 +10,8 @@ class UserProfile(models.Model):
 
 	def __str__(self):
 		return self.user.first_name
+
+class UserForm(ModelForm):
+	class Meta:
+		model = UserProfile
+		fields = '__all__'

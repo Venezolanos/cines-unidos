@@ -31,7 +31,7 @@ class Clasification(models.Model):
 
 class Movie(models.Model):
 	title = models.CharField(max_length=255)
-	poster = models.ImageField(upload_to='static/movies/img')
+	poster = models.ImageField(upload_to='static/movies/')
 	description = models.TextField()
 	duration = models.DurationField(default=timedelta())
 	genre = models.ForeignKey(Genre, on_delete=models.CASCADE)

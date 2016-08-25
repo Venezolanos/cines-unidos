@@ -1,0 +1,8 @@
+{% load static %}
+
+<div class="Movies">
+{% for movie in movies %}
+	<p>{{ movie.title }}</p>
+	<img src="{% static 'movies/poster1.jpg' %}" alt="">
+{% endfor %}
+</div>
